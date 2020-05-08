@@ -53,6 +53,29 @@ namespace Tic_Tac_Toe_Tests
             Assert.Equal("Sihem", current.Name);
         }
 
-        
+        [Fact]
+        public void Can_check_position_onboard()
+        {
+            //Arrange
+            Player player1 = new Player();
+            player1.Name = "Sihem";
+
+            Player player2 = new Player();
+            player2.Name = "Francesco";
+
+            player1.IsTurn = true;
+            player2.IsTurn = false;
+
+            //Act
+            Game nowGameBoard = new Game(player1, player2);
+            Player current = nowGameBoard.NextPlayer();
+
+
+            //Assert
+            Assert.Equal("Sihem", current.Name);
+        }
+
+
+
     }
 }
