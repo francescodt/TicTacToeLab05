@@ -5,8 +5,4 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\XUnitTestProject1\Tic_Tac_Toe_Tests.csproj" />
-  </ItemGroup>
-
 </Project>
