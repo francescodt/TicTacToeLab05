@@ -16,17 +16,17 @@ namespace Tic_Tac_Toe_Tests
         /// winner / draw - program stop
         /// taking turns
         /// </summary>
-        
+
 
         [Fact]
         public void Test_for_winner()
         {
-            
-            Player player1  = new Player();
-            Player player2  = new Player();
-            Game game = new Game(player1,  player2);
 
-            bool result= game.CheckForWinner(null);
+            Player player1 = new Player();
+            Player player2 = new Player();
+            Game game = new Game(player1, player2);
+
+            bool result = game.CheckForWinner(null);
 
             Assert.False(result);
         }
@@ -54,25 +54,23 @@ namespace Tic_Tac_Toe_Tests
         }
 
         [Fact]
+        
         public void Can_check_position_onboard()
         {
             //Arrange
-            Player player1 = new Player();
-            player1.Name = "Sihem";
 
-            Player player2 = new Player();
-            player2.Name = "Francesco";
-
-            player1.IsTurn = true;
-            player2.IsTurn = false;
 
             //Act
-            Game nowGameBoard = new Game(player1, player2);
-            Player current = nowGameBoard.NextPlayer();
+
+            Position position = Player.PositionForNumber(2);
+            Board newBoard = new Board();
+
+            string result = newBoard.GameBoard[position.Row,position.Column];
+                
 
 
             //Assert
-            Assert.Equal("Sihem", current.Name);
+            Assert.Equal("2",result);
         }
 
 
