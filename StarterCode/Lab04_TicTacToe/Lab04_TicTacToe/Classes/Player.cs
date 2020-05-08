@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Player
+   public class Player
     {
 		public string Name { get; set; }
 		/// <summary>
@@ -55,6 +55,8 @@ namespace Lab04_TicTacToe.Classes
 		{
 			IsTurn = true;
 
+
+
 			Console.WriteLine($"{Name} it is your turn");
 
 			Position position = GetPosition(board);
@@ -65,8 +67,12 @@ namespace Lab04_TicTacToe.Classes
 			}
 			else
 			{
+
+                board.DisplayBoard();
+  		        
 				Console.WriteLine("This space is already occupied");
-			}
+                this.TakeTurn(board);
+            }
 		}
 	}
 }
